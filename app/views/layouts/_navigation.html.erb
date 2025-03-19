@@ -1,26 +1,23 @@
 <nav class="navbar navbar-expand-lg bg-black">
   <div class="container bg-black p-10">
-    <a class="navbar-brand text-white" href="#">ALPHA BLOG</a>
+    <%= link_to 'ALPHA BLOG', root_path, class:"navbar-brand text-white" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link text-white" href="#">Link</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Articles
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-white" href="#">Action</a></li>
-            <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider text-white"></li>
-            <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+            <%= link_to 'Create new article', new_article_path, class:"dropdown-item" %>
+            <%= link_to 'View articles', articles_path, class:"dropdown-item" %>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item">
