@@ -1,15 +1,25 @@
-<h2>Article Details Summary</h2>
-  <p><em>Title: </em><%= @article.title%></p> 
-  <p><em>Description: </em><%= @article.description%></p> 
-  <p>
-    <%=link_to "Edit", edit_article_path(@article)%>
-  </p>
-  <p>
-    <%=link_to "Delete", article_path(@article), data: {
-                      turbo_method: :delete,
-                      turbo_confirm: "Are you sure?"
-                    }%>
-  </p>
-  <p>
-    <%= link_to "Back to Articles", articles_path%>
-  </p>
+<div>
+  <h2 class="text-center mt-4 text-white"><%=@article.title%></h3>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 bg-body rounded">
+            <div class="card-header fst-italic">
+              by Abdul
+            </div>
+            <div class="card-body">
+              <p class="card-text"><%=simple_format(@article.description)%></p>
+              <%= link_to "Edit", edit_article_path(@article), class:"btn btn-outline-info"%>
+              <%= link_to "Delete", article_path(@article), data: {turbo_method: :delete}, class:"btn btn-outline-danger" %>
+            </div>
+            <div class="card-footer text-muted">
+              <small>
+                Created <%= time_ago_in_words(@article.created_at)%> ago,
+                Edited <%= time_ago_in_words(@article.updated_at)%> ago
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
