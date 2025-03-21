@@ -1,8 +1,8 @@
 <h2 class="text-center mt-4 text-white">Listing all Articles!</h3>
-  <div class="flickr_pagination container text-white">
-    <%= will_paginate @articles, :container => false, class:"text-lg" %>
+  <div class="container d-flex justify-content-center gap-3 text-white fs-4">
+    <%= will_paginate @articles, :container => false %>
   </div>
 <%= render 'article', obj:@articles%>
-<div class="flickr_pagination mb-5 container text-white">
-  <%= will_paginate @articles, :container => false, class:"text-2xl" %>
+<div class="mb-5 container d-flex justify-content-center fs-4 gap-3 text-white">
+  <%= will_paginate @articles, :container => false %>
 </div>
