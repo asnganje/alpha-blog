@@ -3,4 +3,10 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   # include ApplicationHelper
+  def require_user
+    if !helpers.logged_in?
+      flash[:alert] = "You must be logged in to perform that action!"
+      redirect_to login_path
+    end
+  end
 end

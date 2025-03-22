@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def avatar_for(user, options = { size: '300x300' })
+  def avatar_for(user, options = { size: '200x200' })
     email_address = user.email.downcase
     hash = Digest::MD5.hexdigest(email_address)
     size = options[:size]

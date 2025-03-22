@@ -1,23 +1,23 @@
 <div>
-  <h2 class="text-center mt-4 text-white">Alpha Bloggers!</h3>
+  <h2 class="text-center mt-2 text-white">Alpha Bloggers!</h3>
   <div class="container">
     <%@users.each do |user|%>
     <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
-        <div class="card text-center shadow mb-5 bg-body rounded">
-            <div class="card-header fst-italic mb-4">
+      <div class="col-8 mt-2">
+        <div class="card text-center shadow mb-2 bg-body rounded">
+            <div class="card-header fst-italic mb-2">
               <%= link_to user.username, user %>
             </div>
             <div>
               <%= link_to avatar_for(user), user %>
             </div>
-            <p class="my-4"><%=pluralize(user.articles.count, 'article')%></p>
+            <p class="mt-1"><%=pluralize(user.articles.count, 'article')%></p>
             <div class="card-body">
               <%= link_to "View Profile", user_path(user), class:"btn btn-outline-success" %>
               <% if logged_in? && user == current_user %>
                 <%= link_to "Edit Profile", edit_user_path(user), class:"btn btn-outline-info"%>
               <% end %>
-            <div class="card-footer text-muted mt-4">
+            <div class="card-footer text-muted mt-2">
               <small>
                 Joined <%= time_ago_in_words(user.created_at)%> ago,
               </small>
