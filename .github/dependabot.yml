@@ -4,6 +4,8 @@ updates:
   directory: "/"
   schedule:
     interval: daily
+  ignore:
+    - dependency-name: "brakeman"
   open-pull-requests-limit: 10
 - package-ecosystem: github-actions
   directory: "/"
